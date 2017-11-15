@@ -1,5 +1,38 @@
 <p>
-  news works!
+  news works!{{title}}
 </p>
 
-<h2>这是一个新闻组件</h2>
+<div class="{{msg}}">绑定标签属性的一种方法</div>
+<div [class]="msg">绑定标签属性的另一种方法</div>
+
+{{msgString}}
+<br>
+<span [innerHTML]="msgString"></span>
+
+<p>数组和对象</p>
+
+<ul>
+  <li *ngFor="let item of list"> {{item}} </li>
+</ul>
+<p>获取索引值</p>
+<ul>
+  <li *ngFor="let item of list2; let i = index"> {{i}}->{{item}} </li>
+</ul>
+<p>对象数组</p>
+<ul>
+  <li *ngFor="let item of list3; let i = index"> {{i}}->{{item.title}} </li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let item of list4; let i = index">
+     {{i}}->{{item.car}} 
+    <ol>
+      <li *ngFor="let a of item.list">
+        {{item.car}}:{{a.title}}
+      </li>
+    </ol>
+  </li>
+</ul>
+
+
+<p>{{obj.name}}</p>
