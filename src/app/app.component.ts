@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; // 引入Angular核心
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root', // 表示使用组件的名称
+  templateUrl: './app.component.html', // 组件对应的html模板
+  styleUrls: ['./app.component.css'] // 组件使用的css
 })
-export class AppComponent {
+export class AppComponent { // 数据
   title = 'app';
+
+  hello = '你好，Angular!'
 }

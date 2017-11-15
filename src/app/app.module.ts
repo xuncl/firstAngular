@@ -3,18 +3,20 @@
 
 // 引入模块
 import { BrowserModule } from '@angular/platform-browser'; // 浏览器解析模块
-import { NgModule } from '@angular/core'; // 核心模块
+import { NgModule } from '@angular/core'; //核心模块
+import { HeaderComponent } from './components/header/header.component';
 
 
 import { AppComponent } from './app.component'; // 自定义模块
 
 
 /* @NgModule装饰器将AppModule标记为Angular模块类（也叫NgModule类）。
-@NgModule接受一元数组对象，告诉Angular如何编译和启动应用。*/
+  //@NgModule, HeaderComponent 接受一元数组对象，告诉Angular如何编译和启动应用。*/
 
 @NgModule({
   declarations: [ // 引入当前项目运行的组件，自定义组件都需要引入至此
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [ // 当前的项目依赖哪些模块
     BrowserModule
