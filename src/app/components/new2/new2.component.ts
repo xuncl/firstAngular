@@ -15,9 +15,11 @@ export class New2Component implements OnInit {
   public flag:any;
   public search:any;
 
-  public storage= new StorageService();
+  public storage= new StorageService(); //官方不推荐
 
-  constructor() {
+
+
+  constructor(private storage2:StorageService) { // 官方推荐
     this.msg="这是另一个新闻组件。"
     this.username="name";
     this.flag=true;
