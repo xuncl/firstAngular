@@ -1,13 +1,14 @@
 <p>
-  header works!
+  todo list works!
 </p>
 <div>
+  {{inputContent}}
   <input type="text" (keyup)='addKeyUpFn($event)' [(ngModel)]='inputContent'>
   <button (click)='addButtonFn()'>添加</button>
 </div>
 <hr>
 <div>
-  <h2>当前任务</h2>
+  <h2>当前任务:</h2>
 
   <ul>
     <li *ngFor="let item of targetList; let i = index">
@@ -17,7 +18,7 @@
   </ul>
 </div>
 <div>
-  <h2>已完成</h2>
+  <h2>已完成:</h2>
 
   <ul>
     <li *ngFor="let item of doneList; let i = index"> {{i}}->{{item}} </li>

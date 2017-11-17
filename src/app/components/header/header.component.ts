@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -12,18 +13,19 @@ export class HeaderComponent implements OnInit {
   doneList = [];
   inputContent = "";
 
-  constructor() { }
+  constructor(private storage:StorageService) {
+   }
 
   ngOnInit() {
+    this.targetList = this.storage.getItem("target");
+    if (!this.targetList) this.targetList = [];
+    this.doneList = this.storage.getItem("done");
+    if (!this.doneList) this.doneList = [];
   }
 
   addKeyUpFn(e) {
     if (e.keyCode == 13) {
-      if (this.inputContent) {
-        this.targetList.push(this.inputContent);
-        this.inputContent = "";
-      }
-      // alert("hui che")
+      this.addButtonFn();
     }
   }
 
@@ -31,15 +33,19 @@ export class HeaderComponent implements OnInit {
     if (this.inputContent) {
       this.targetList.push(this.inputContent);
       this.inputContent = "";
+      this.storage.setItem("target", this.targetList);
     }
   }
-
+  
   finishFn(i) {
     this.doneList.push(this.targetList.splice(i, 1));
+    this.storage.setItem("target", this.targetList);
+    this.storage.setItem("done", this.doneList);
   }
-
+  
   deleteFn(i) {
     this.targetList.splice(i, 1);
+    this.storage.setItem("target", this.targetList);
   }
 
 }
