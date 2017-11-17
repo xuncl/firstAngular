@@ -1,3 +1,27 @@
 <p>
-  new2 works!
+  事件和ngif
 </p>
+
+<button (click)='getMsg()'>执行方法</button>
+
+
+<br>
+
+{{username}}
+<button (click)='setUsername()'>改变name</button>
+
+<p>NgIf</p>
+
+<div *ngIf="flag">flag=true时显示此段落</div>
+<button (click)='toggleFlag()'>flag开关</button>
+<button (click)='flag=!flag'>flag开关2</button>
+
+<p>form</p>
+<input type="text" (keyup)='keyupFn($event)'>
+
+<button (click)='onClick($event)'>$event事件对象</button>
+
+<p>双向数据绑定，必须引入FormsModule</p>
+绑定：{{search}}
+<input type="text" [(ngModel)]="search">
+<button (click)='getSearch()'>get绑定值</button>
