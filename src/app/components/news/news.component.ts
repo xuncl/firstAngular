@@ -2,6 +2,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Http,Jsonp,Headers } from '@angular/http'; // 注意这里引入的不是Module
 
+import { Observable} from 'rxjs';
+
+import "rxjs/Rx";
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -71,10 +75,31 @@ export class NewsComponent implements OnInit {
     });
   }
 
+  requestWithRxData(){
+    // 返回的数据转换成json
+    // http.get()返回的是一个Observalbe对象，因此具有map方法（前提要import RxJs）
+    var url = "http://localhost:8088/get";
+    this.http.get(url).map(res=>res.json()).subscribe(function(data){
+      console.log(data);
+    },function(err){
+      console.log(err);
+    });
+  }
+
   requestJsonpData(){
         // alert("requestData");
         var url = "http://localhost:8088/jsonp?callback=JSONP_CALLBACK";// jsonp必须要有这个参数，返回必须是json
         this.jsonp.get(url).subscribe(function(data){
+          console.log(data);
+        },function(err){
+          console.log(err);
+        });
+  }
+
+  requestJsonpWithRxData(){
+        // alert("requestData");
+        var url = "http://localhost:8088/jsonp?callback=JSONP_CALLBACK";// jsonp必须要有这个参数，返回必须是json
+        this.jsonp.get(url).map(res=>res.json()).subscribe(function(data){
           console.log(data);
         },function(err){
           console.log(err);
