@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { Http,Jsonp } from '@angular/http'; // 注意这里引入的不是Module
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -26,7 +28,7 @@ export class NewsComponent implements OnInit {
   public list3:any[]
   public list4:any[]
 
-  constructor() {
+  constructor(private http:Http, private jsonp:Jsonp) { // 在构造函数中申明
     this.msg="另一种定义属性的方法"
     this.msgString="<h2>这里是取回的新闻数据。</h2>"
     
@@ -53,6 +55,16 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  requestData(){
+    // alert("requestData");
+    var url = "http://www.baidu.com/";
+    this.http.get(url).subscribe(function(data){
+      console.log(data);
+    },function(err){
+      console.log(err);
+    });
   }
 
 }

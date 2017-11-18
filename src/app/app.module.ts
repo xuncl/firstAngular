@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpModule,JsonpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component'; // 自定义模块
 import { HeaderComponent } from './components/header/header.component';
@@ -28,7 +30,7 @@ import { StorageService } from './services/storage.service'
     New2Component
   ],
   imports: [ // 当前的项目依赖哪些模块
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpModule, JsonpModule
   ],
   providers: [StorageService], // 定义的Providers 服务
   bootstrap: [AppComponent] // 默认启动哪个组件
