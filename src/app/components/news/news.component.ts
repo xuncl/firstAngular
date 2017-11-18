@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { Http,Jsonp } from '@angular/http'; // 注意这里引入的不是Module
+import { Http,Jsonp,Headers } from '@angular/http'; // 注意这里引入的不是Module
 
 @Component({
   selector: 'app-news',
@@ -14,6 +14,8 @@ export class NewsComponent implements OnInit {
 
   msg: any
   msgString: string // 默认public
+  headers = new Headers({'Content-Type':'application/json'});
+
 
 // 声明属性可以加修饰符 public,protected,private
 
@@ -57,9 +59,11 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
   }
 
+  // D:\Workspaces\intelliJ-IDEA\js\nodejs_demo 是对应的后端工程
+
   requestData(){
     // alert("requestData");
-    var url = "http://www.baidu.com/";
+    var url = "http://localhost:8088/get";
     this.http.get(url).subscribe(function(data){
       console.log(data);
     },function(err){
@@ -69,11 +73,21 @@ export class NewsComponent implements OnInit {
 
   requestJsonpData(){
         // alert("requestData");
-        var url = "http://www.baidu.com/callback=JSONP_CALLBACK";// jsonp必须要有这个参数，返回必须是json
+        var url = "http://localhost:8088/jsonp?callback=JSONP_CALLBACK";// jsonp必须要有这个参数，返回必须是json
         this.jsonp.get(url).subscribe(function(data){
           console.log(data);
         },function(err){
           console.log(err);
         });
+  }
+
+  postData(){
+    // Hearders 定义请求头
+    var url = "http://localhost:8088/post";// jsonp必须要有这个参数，返回必须是json
+
+    this.http.post(url,JSON.stringify({username:'vs code xuncl'}),{headers:this.headers}).subscribe(function(res){
+      console.log("here post");
+      console.log(res.json())
+    })
   }
 }
