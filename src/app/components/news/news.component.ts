@@ -67,4 +67,13 @@ export class NewsComponent implements OnInit {
     });
   }
 
+  requestJsonpData(){
+        // alert("requestData");
+        var url = "http://www.baidu.com/callback=JSONP_CALLBACK";// jsonp必须要有这个参数，返回必须是json
+        this.jsonp.get(url).subscribe(function(data){
+          console.log(data);
+        },function(err){
+          console.log(err);
+        });
+  }
 }
