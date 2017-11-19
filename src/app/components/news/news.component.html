@@ -4,8 +4,11 @@
 
 <p>news 的子组件 child</p>
 
-<!-- 通过[title]="title"向子组件传值 -->
-<app-child [title]="title" [transportData]="transportData" [fatherFn]="fatherFn" [fatherFn2]="fatherFn2"></app-child>
+<!-- 通过[title]="title"向子组件传值，前面是子组件的变量名，后面是父组件的，但最好保持一致 -->
+<!-- 父组件调用子组件的时候，定义接受事件，outer就是子组件的EventEmitter对象outer -->
+<!-- 相当于监听一个事件，并赋值给outer，outer就是子组件的对象，不能改其他名字 -->
+<!-- outer相当于是广播的一个key,和click等行为是等价的 -->
+<app-child [title]="title" [transportData2]="transportData" [fatherFn]="fatherFn" [fatherFn2]="fatherFn2" (outer)="runParent($event)"></app-child>
 
 <div class="{{msg}}">绑定标签属性的一种方法</div>
 <div [class]="msg">绑定标签属性的另一种方法</div>

@@ -127,4 +127,9 @@ export class NewsComponent implements OnInit {
   fatherFn2(arg){
     alert("这里是父组件(news)的成员方法。参数为："+arg);
   }
+
+  runParent(e){
+    console.log(e);
+    alert("@output方式调用的父组件方法，参数是："+e);
+  }
 }
