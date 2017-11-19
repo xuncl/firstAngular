@@ -1,4 +1,5 @@
 <!-- 直接传父亲的值不可行 -->
-<h2 class="child">父子组件传值--{{title}}</h2>
+<h2 class="child" (click)="fatherFn()">父子组件传值--{{title}}</h2>
 <span>{{transportData}}</span>
+<button (click)="childFn()">给父组件传值的方法</button>
 <hr>

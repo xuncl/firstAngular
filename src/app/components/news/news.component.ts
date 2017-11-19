@@ -14,9 +14,11 @@ import "rxjs/Rx";
 })
 export class NewsComponent implements OnInit {
 
-  title="你好 Angular 4.x 这里是news组件" // 属性
+  title="这里是news组件，点击我" // 属性
 
   public transportData="这是news想要传给child的值";
+
+  arg = "父组件(news)"
 
   msg: any
   msgString: string // 默认public
@@ -116,5 +118,13 @@ export class NewsComponent implements OnInit {
       console.log("here post");
       console.log(res.json())
     })
+  }
+
+  fatherFn(){
+    alert("这里是父组件(news)的成员方法。无参数。");
+  }
+
+  fatherFn2(arg){
+    alert("这里是父组件(news)的成员方法。参数为："+arg);
   }
 }

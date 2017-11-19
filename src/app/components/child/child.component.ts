@@ -9,13 +9,22 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-// 通过Input接收过来的title值
+// 通过Input接收过来的title值和fatherFn方法
   @Input() title:string;
-  @Input() transportData:string;
+  @Input() transportData;
+  @Input() fatherFn;
+  @Input() fatherFn2;
+
+  arg = "子组件（child）";
 
   constructor() { }
 
   ngOnInit() {
+    this.title=this.title+" 可以修改父组件数据。";
+  }
+
+  childFn(){ // 子组件自己的方法
+    this.fatherFn2(this.arg); // 子组件调用父组件的方法
   }
 
 }
