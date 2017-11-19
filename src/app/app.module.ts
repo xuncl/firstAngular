@@ -14,20 +14,23 @@ import { AppComponent } from './app.component'; // 自定义模块
 import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './components/news/news.component';
 import { New2Component } from './components/new2/new2.component';
+import { ChildComponent } from './components/child/child.component';
 
-import { StorageService } from './services/storage.service'
+import { StorageService } from './services/storage.service';
 
 
 /* nNgModule装饰器将AppModule标记为Angular模块类（也叫NgModule类）。
      NgModule, 接受一元数组�,
-    �告诉Angular如何编译和启动应用。*/
+    �告诉Angular如,
+    何编译和启动应用。*/
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NewsComponent,
-    New2Component
+    New2Component,
+    ChildComponent
   ],
   imports: [ // 当前的项目依赖哪些模块
     BrowserModule, FormsModule, HttpModule, JsonpModule

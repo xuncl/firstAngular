@@ -2,6 +2,11 @@
   news works!{{title}}
 </p>
 
+<p>news 的子组件 child</p>
+
+<!-- 通过[title]="title"向子组件传值 -->
+<app-child [title]="title" [transportData]="transportData"></app-child>
+
 <div class="{{msg}}">绑定标签属性的一种方法</div>
 <div [class]="msg">绑定标签属性的另一种方法</div>
 

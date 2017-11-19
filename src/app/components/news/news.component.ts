@@ -14,7 +14,9 @@ import "rxjs/Rx";
 })
 export class NewsComponent implements OnInit {
 
-  title="你好 Angular 4.x" // 属性
+  title="你好 Angular 4.x 这里是news组件" // 属性
+
+  public transportData="这是news想要传给child的值";
 
   msg: any
   msgString: string // 默认public
