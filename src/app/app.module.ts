@@ -18,6 +18,7 @@ import { ChildComponent } from './components/child/child.component';
 
 import { StorageService } from './services/storage.service';
 
+import { AppRoutingModule } from './app-routing.module';
 
 /* nNgModule装饰器将AppModule标记为Angular模块类（也叫NgModule类）。
      NgModule, 接受一元数组�,
@@ -33,7 +34,7 @@ import { StorageService } from './services/storage.service';
     ChildComponent
   ],
   imports: [ // 当前的项目依赖哪些模块
-    BrowserModule, FormsModule, HttpModule, JsonpModule
+    BrowserModule, FormsModule, HttpModule, JsonpModule, AppRoutingModule
   ],
   providers: [StorageService], // 定义的Providers 服务
   bootstrap: [AppComponent] // 默认启动哪个组件
