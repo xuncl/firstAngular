@@ -12,3 +12,8 @@
     background: black;
     color: #fff;
 }
+
+.activeClass{
+    color: red;
+    font-size: 40px;
+}
