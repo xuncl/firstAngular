@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './components/news/news.component';
 import { New2Component } from './components/new2/new2.component';
 import { ChildComponent } from './components/child/child.component';
+import { NewsContentComponent } from './components/news-content/news-content.component';
 
 import { StorageService } from './services/storage.service';
 
@@ -23,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
 /* nNgModule装饰器将AppModule标记为Angular模块类（也叫NgModule类）。
      NgModule, 接受一元数组�,
     �告诉Angular如,
-    何编译和启动应用。*/
+    何编译和启动��用。*/
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     NewsComponent,
     New2Component,
-    ChildComponent
+    ChildComponent,
+    NewsContentComponent
   ],
   imports: [ // 当前的项目依赖哪些模块
     BrowserModule, FormsModule, HttpModule, JsonpModule, AppRoutingModule

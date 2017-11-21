@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './components/news/news.component';
 import { New2Component } from './components/new2/new2.component';
+import { NewsContentComponent } from './components/news-content/news-content.component';
 const routes: Routes = [
   {
     path: 'header',
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'new2',
     component:New2Component
+  },
+  {
+    path: 'content/:aid',
+    component:NewsContentComponent
   },
   {
     path: '',
