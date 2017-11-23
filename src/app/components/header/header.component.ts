@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,7 +15,7 @@ export class HeaderComponent implements OnInit {
   doneList = [];
   inputContent = "";
 
-  constructor(private storage:StorageService) {
+  constructor(private storage:StorageService, private router:Router) {
    }
 
   ngOnInit() {
@@ -48,4 +50,10 @@ export class HeaderComponent implements OnInit {
     this.storage.setItem("target", this.targetList);
   }
 
+  goNews(){
+    // alert("goNews");
+    // this.router.navigate(["/news"]);
+    // this.router.navigate(["/content/1"]); // 这种方法也行
+    this.router.navigate(["/content", "123"]); // 推荐这种
+  }
 }
