@@ -16,6 +16,7 @@ import { NewsComponent } from './components/news/news.component';
 import { New2Component } from './components/new2/new2.component';
 import { ChildComponent } from './components/child/child.component';
 import { NewsContentComponent } from './components/news-content/news-content.component';
+import { ShoplistComponent } from './components/shoplist/shoplist.component';
 
 import { StorageService } from './services/storage.service';
 
@@ -33,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
     NewsComponent,
     New2Component,
     ChildComponent,
-    NewsContentComponent
+    NewsContentComponent,
+    ShoplistComponent
   ],
   imports: [ // 当前的项目依赖哪些模块
     BrowserModule, FormsModule, HttpModule, JsonpModule, AppRoutingModule

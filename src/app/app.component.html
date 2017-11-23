@@ -11,6 +11,9 @@
       <li><a routerLink="header" routerLinkActive="activeClass">header</a></li>
       <li><a routerLink="news" routerLinkActive="activeClass">news</a></li>
       <li><a routerLink="new2" routerLinkActive="activeClass">new2</a></li>
+      <li><a href="shoplist?aid=123" routerLinkActive="activeClass">shoplist的href跳转，会刷新页面，不推荐</a></li>
+      <li><button (click)="goShop(111,'fucker')">shoplist的get方式跳转路由1</button></li>
+      <li><button (click)="goShop(222,'KILLer')">shoplist的get方式跳转路由2</button></li>
     </ul>
   </div>
   <!-- <app-new2></app-new2>

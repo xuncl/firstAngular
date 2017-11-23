@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewsComponent } from './components/news/news.component';
 import { New2Component } from './components/new2/new2.component';
 import { NewsContentComponent } from './components/news-content/news-content.component';
+import { ShoplistComponent } from './components/shoplist/shoplist.component';
 const routes: Routes = [
   {
     path: 'header',
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'content/:aid',
     component:NewsContentComponent
+  },
+  {
+    path: 'shoplist',
+    component:ShoplistComponent
   },
   {
     path: '',
